@@ -8,3 +8,7 @@ type JornadaElectoral struct {
 	Ubicacion      string
 	Dni_resposable int
 }
+
+func New() JornadaElectoral {
+	return JornadaElectoral{}
+}

@@ -15,10 +15,12 @@ func servicio_JEServicio() puertos.JornadaElectoralServicio {
 	return &JEServicio{}
 }
 
-func (jes *JEServicio) AbrirJE() (*dominio.JornadaElectoral, error) {
+func (jes *JEServicio) AbrirJE(u string, dni_r int) (*dominio.JornadaElectoral, error) {
 	jornada := dominio.JornadaElectoral{
-		ID:    uuid.New(),
-		Fecha: time.Now(),
+		ID:             uuid.New(),
+		Fecha:          time.Now(),
+		Ubicacion:      u,
+		Dni_resposable: dni_r,
 	}
 	return &jornada, nil
 }
