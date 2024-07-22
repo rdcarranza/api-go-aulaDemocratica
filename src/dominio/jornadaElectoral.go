@@ -12,3 +12,13 @@ type JornadaElectoral struct {
 func New() JornadaElectoral {
 	return JornadaElectoral{}
 }
+
+func guardar() bool {
+
+	return true
+}
+
+func actualizar() bool {
+
+	return true
+}
