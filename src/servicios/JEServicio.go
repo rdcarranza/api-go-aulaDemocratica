@@ -11,7 +11,7 @@ import (
 type JEServicio struct {
 }
 
-func servicio_JEServicio() puertos.JornadaElectoralServicio {
+func Servicio_JornadaElectoral() puertos.JornadaElectoralServicio {
 	return &JEServicio{}
 }
 

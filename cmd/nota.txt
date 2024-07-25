@@ -13,5 +13,3 @@ La idea es tener un adaptador que sirva para todos
 -Consumir un servicio.
 -Traducir el response.
 
-https://www.youtube.com/watch?v=kSz3oms4yZM
-minuto: 39
