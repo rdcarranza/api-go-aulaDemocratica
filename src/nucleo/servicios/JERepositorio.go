@@ -1,16 +1,26 @@
 package servicios
 
 import (
-	"api-go-aulaDemocratica/src/dominio"
-	"api-go-aulaDemocratica/src/puertos"
+	"api-go-aulaDemocratica/src/nucleo/dominio"
+	"api-go-aulaDemocratica/src/nucleo/puertos"
 )
 
 type JERepositorio struct {
 	Repo puertos.JornadaElectoralRepositorio
 }
 
+//var _ puertos.JornadaElectoralRepositorio = (*JERepositorio)(nil)
+
+// Implementación de interfaz
 func Repositorio_JornadaElectoral() puertos.JornadaElectoralRepositorio {
 	return &JERepositorio{}
+}
+
+// constructor
+func NuevoRepositorio_JornadaElectoral(repositorio puertos.JornadaElectoralRepositorio) *JERepositorio {
+	return &JERepositorio{
+		Repo: repositorio,
+	}
 }
 
 func (jer *JERepositorio) InsertarJE(je dominio.JornadaElectoral) (id interface{}, err error) {

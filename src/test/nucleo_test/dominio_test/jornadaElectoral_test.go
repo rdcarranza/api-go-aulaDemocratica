@@ -2,7 +2,7 @@
 package dominio_test
 
 import (
-	"api-go-aulaDemocratica/src/dominio"
+	"api-go-aulaDemocratica/src/nucleo/dominio"
 	"testing"
 	"time"
 

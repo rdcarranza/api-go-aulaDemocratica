@@ -1,7 +1,7 @@
 package puertos
 
 import (
-	"api-go-aulaDemocratica/src/dominio"
+	"api-go-aulaDemocratica/src/nucleo/dominio"
 )
 
 type JornadaElectoralServicio interface {

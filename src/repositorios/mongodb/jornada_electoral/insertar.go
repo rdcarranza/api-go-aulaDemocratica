@@ -1,7 +1,7 @@
 package repositorio_mongodb_je
 
 import (
-	"api-go-aulaDemocratica/src/dominio"
+	"api-go-aulaDemocratica/src/nucleo/dominio"
 	"context"
 	"log"
 )

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"api-go-aulaDemocratica/src/servicios"
+	"api-go-aulaDemocratica/src/nucleo/servicios"
 	"fmt"
 	"strconv"
 
@@ -20,7 +20,9 @@ func main() {
 	//jornada := servicios.JEServicio(dominio.JornadaElectoral().New())
 
 	//jes := servicios.JEServicio{}
-	jes := servicios.Servicio_JornadaElectoral()
+	//jes := servicios.Servicio_JornadaElectoral()
+
+	jes := servicios.NuevoServicio_JornadaElectora()
 
 	jornada, err := jes.AbrirJE("escuela", 11111111)
 	if err == nil {

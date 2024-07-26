@@ -1,8 +1,8 @@
 package servicios
 
 import (
-	"api-go-aulaDemocratica/src/dominio"
-	"api-go-aulaDemocratica/src/puertos"
+	"api-go-aulaDemocratica/src/nucleo/dominio"
+	"api-go-aulaDemocratica/src/nucleo/puertos"
 	"time"
 
 	"github.com/google/uuid"
@@ -11,7 +11,13 @@ import (
 type JEServicio struct {
 }
 
+// implementación de la interfaz
 func Servicio_JornadaElectoral() puertos.JornadaElectoralServicio {
+	return &JEServicio{}
+}
+
+// constructor
+func NuevoServicio_JornadaElectora() *JEServicio {
 	return &JEServicio{}
 }
 
