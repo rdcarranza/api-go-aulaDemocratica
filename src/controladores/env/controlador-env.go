@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func verificarEnv(dir_env string, c_dir_env string) bool {
+func VerificarEnv(dir_env string, c_dir_env string) bool {
 	/*
 		ex, _ := os.Executable()
 		fmt.Println("La ruta del ejecutable es: " + ex)
@@ -19,16 +19,16 @@ func verificarEnv(dir_env string, c_dir_env string) bool {
 
 	env := dir_env
 	copia_env := c_dir_env
-	if !envExiste(env) {
-		fmt.Println("El archivo env de VaT no existe!")
-		err := crearEnv(env, copia_env)
+	if !EnvExiste(env) {
+		fmt.Println("El archivo env NO existe!")
+		err := CrearEnv(env, copia_env)
 		if err != nil {
 			log.Fatal(err)
 		}
 
 	}
 
-	if envExiste(env) {
+	if EnvExiste(env) {
 		return true
 	}
 
@@ -36,7 +36,7 @@ func verificarEnv(dir_env string, c_dir_env string) bool {
 
 }
 
-func crearEnv(dir_env string, c_dir_env string) error {
+func CrearEnv(dir_env string, c_dir_env string) error {
 	copia_env, err := os.Open(c_dir_env)
 	if err != nil {
 		log.Fatal(err)
@@ -52,13 +52,13 @@ func crearEnv(dir_env string, c_dir_env string) error {
 		//log.Fatal(err)
 
 	} else {
-		fmt.Println("Se genera env de Vat exitosamente!")
+		fmt.Println("Se genera env exitosamente!")
 	}
 
 	return nil
 }
 
-func envExiste(arch_env string) bool {
+func EnvExiste(arch_env string) bool {
 	if _, err := os.Stat(arch_env); os.IsNotExist(err) {
 		return false
 	}
@@ -66,7 +66,7 @@ func envExiste(arch_env string) bool {
 
 }
 
-func getEnv(v string, dir_env string) (string, error) {
+func GetEnv(v string, dir_env string) (string, error) {
 	env := dir_env
 
 	file, err := os.Open(env)

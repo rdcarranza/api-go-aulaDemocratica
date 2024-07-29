@@ -6,13 +6,13 @@ import (
 	"log"
 )
 
-func (r *Repositorio) insertar(je dominio.JornadaElectoral) (id interface{}, err error) {
+func (r *Repositorio) ActualizarEstado(je *dominio.JornadaElectoral) (b bool, err error) {
 	collection := r.Cliente.Database("aula_democratica").Collection("jornadas_electorales")
-	insResultado, err := collection.InsertOne(context.Background(), je)
+	_, err = collection.UpdateOne(context.Background(), je.GetID(), je)
 	if err != nil {
 		log.Println(err.Error())
 		//return nil, fmt.Errorf("Error al insertar Jornada Electoral: %w", err)
-		return nil, err
+		return false, err
 	}
-	return insResultado, nil
+	return true, nil
 }

@@ -11,25 +11,12 @@ import (
 )
 
 func TestJornadaElectoralInstanceCreatedSuccessfully(t *testing.T) {
-	jornada := dominio.JornadaElectoral{
-		ID:    uuid.New(),
-		Fecha: time.Now(),
-	}
+	jornada := dominio.JornadaElectoral{}
+	jornada.NuevaJornadaElectoral()
 
 	assert.NotNil(t, jornada)
-	assert.IsType(t, uuid.UUID{}, jornada.ID)
+	assert.IsType(t, uuid.UUID{}, jornada.GetID())
 
-	assert.WithinDuration(t, time.Now(), jornada.Fecha, time.Second)
+	assert.WithinDuration(t, time.Now(), jornada.GetFecha_apertura(), time.Second)
 
-}
-
-func TestJornadaElectoralIDIsNotValidUUID(t *testing.T) {
-	invalidID := "invalid-uuid"
-	jornada := dominio.JornadaElectoral{
-		ID:    invalidID,
-		Fecha: time.Now(),
-	}
-
-	_, err := uuid.Parse(jornada.ID.(string))
-	assert.Error(t, err)
 }

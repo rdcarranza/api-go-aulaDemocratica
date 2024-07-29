@@ -10,9 +10,9 @@ import (
 
 //db_url=mongodb+srv://<user>:<password>@<host:port>/
 
-func conexionCliente(db_url string) (cliente *mongo.Client, err error) {
+func ConexionCliente(db_url string) (cliente *mongo.Client, err error) {
 	//Se configura el tiempo de espera antes de cancelar la conexión.
-	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	defer cancel()
 
 	//Conexión al servidor de MongoDB
