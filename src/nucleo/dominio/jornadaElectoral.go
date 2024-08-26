@@ -22,12 +22,12 @@ func (je *JornadaElectoral) NuevaJornadaElectoral() {
 }
 
 func (*JornadaElectoral) Guardar() bool {
-
+	//este método, debe estar controlado como un servicio
 	return true
 }
 
 func (*JornadaElectoral) Actualizar() bool {
-
+	//este método, debe estar controlado como un servicio
 	return true
 }
 

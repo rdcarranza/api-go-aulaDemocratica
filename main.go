@@ -54,6 +54,7 @@ func main() {
 	jornada, err := jes.AbrirJE("escuela", 11111111)
 	if err == nil {
 		//fmt.Println("Jornada creada! - ID: " + jornada.ID.(uuid.UUID).String() + " fecha: " + jornada.Fecha.String() + " - ubicación: " + jornada.Ubicacion + " - DNI del responsable: " + strconv.Itoa(jornada.Dni_resposable))
+
 		fmt.Println("Jornada creada! - ID: " + jornada.GetID().String() + " fecha: " + jornada.GetFecha_apertura().String() + " - ubicación: " + jornada.GetUbicacion() + " - DNI del responsable: " + strconv.Itoa(jornada.GetDni_responsable()))
 	}
 

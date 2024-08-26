@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func (r *Repositorio) ActualizarEstado(je *dominio.JornadaElectoral) (b bool, err error) {
+func (r *Repositorio) ActualizarEstadoJE(je *dominio.JornadaElectoral) (b bool, err error) {
 	collection := r.Cliente.Database("aula_democratica").Collection("jornadas_electorales")
 	_, err = collection.UpdateOne(context.Background(), je.GetID(), je)
 	if err != nil {

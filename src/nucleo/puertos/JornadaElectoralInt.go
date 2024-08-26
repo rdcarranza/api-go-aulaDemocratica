@@ -10,6 +10,6 @@ type JornadaElectoralServicio interface {
 }
 
 type JornadaElectoralRepositorio interface {
-	//conexionCliente(db_url string) (cliente *mongo.Client, err error)
 	InsertarJE(je dominio.JornadaElectoral) (id interface{}, err error)
+	ActualizarEstadoJE(je *dominio.JornadaElectoral) (b bool, err error)
 }

@@ -6,7 +6,7 @@ import (
 	"log"
 )
 
-func (r *Repositorio) insertar(je dominio.JornadaElectoral) (id interface{}, err error) {
+func (r *Repositorio) InsertarJE(je dominio.JornadaElectoral) (id interface{}, err error) {
 	collection := r.Cliente.Database("aula_democratica").Collection("jornadas_electorales")
 	insResultado, err := collection.InsertOne(context.Background(), je)
 	if err != nil {
